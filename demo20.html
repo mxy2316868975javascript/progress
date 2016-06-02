@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>等级</title>
+<style>
+*{
+  margin: 0;padding:0;
+}
+.mature-progress {
+  margin-top: 15px;
+}
+.mature-progress .mature-progress-top {
+  position: relative;
+  padding-left: 15px;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+}
+.mature-progress .mature-progress-top:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 20px;
+  left: 0;
+  top: 10px;
+  background: #e10482;
+  border-radius: 5px;
+}
+.mature-progress .mature-progress-bottom {
+  border-radius: 5px;
+  border: #f2f2f2 solid 1px;
+  padding: 15px;
+  position: relative;
+  height: 125px;
+  width: 720px;
+}
+.mature-progress .mature-progress-bottom p > span {
+  color: #e10482;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box {
+  height: 105px;
+  padding: 10px 0 0 10px;
+  position: absolute;
+  top: 60px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.bgtwos {
+  z-index: 1;
+  top: 55px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.bgtwos dl dt {
+  border: #f2f2f2 solid 5px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.v0 dl:nth-of-type(1) dt {
+  background: #e10482;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.v1 dl:nth-of-type(2) dt {
+  background: #e10482;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.v2 dl:nth-of-type(3) dt {
+  background: #e10482;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.v3 dl:nth-of-type(4) dt {
+  background: #e10482;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box.v4 dl:nth-of-type(5) dt {
+  background: #e10482;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box dl {
+  width: 70px;
+  text-align: center;
+  float: left;
+  margin-right: 65px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box dl dt {
+  width: 40px;
+  height: 40px;
+  background: #999999;
+  color: #fff;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box dl dd {
+  padding-top: 5px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box {
+  position: absolute;
+  width: 676px;
+  height: 15px;
+  border-radius: 10px;
+  border: #f2f2f2 solid 5px;
+  background: #fff;
+  z-index: 2;
+  top: 20px;
+  left: 22px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i {
+  position: absolute;
+  height: 15px;
+  background: #e10482;
+  left: 36px;
+  top: 0;
+  width: 0;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i.progress-box-2 {
+  left: 171px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i.progress-box-3 {
+  left: 305px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i.progress-box-4 {
+  left: 440px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i.progress-box-5 {
+  left: 576px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i span {
+  position: absolute;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  background: #fff;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  font-style: normal;
+  border: #cccccc solid 1px;
+  right: -80px;
+  top: -50px;
+  padding: 0 10px;
+  width: 135px;
+  text-align: center;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ccc transparent transparent transparent;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -10px;
+}
+.mature-progress .mature-progress-bottom .mature-progress-box .progress-box i span:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  bottom: -19px;
+  left: 50%;
+  margin-left: -10px;
+}
+</style>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  
+<div class="mature-progress">
+  <div class="mature-progress-bottom">
+    <!-- 等级样式  v0 v1 v2 v3 v4 v5 -->
+    <div class="mature-progress-box v0" id="mamture_progress">
+      <dl>
+        <dt>0</dt>
+        <dd><span class="member-ico v0"></span>小妞</dd>
+      </dl>
+      <dl>
+        <dt>200</dt>
+        <dd><span class="member-ico v1"></span>菇凉</dd>
+      </dl>
+      <dl>
+        <dt>1000</dt>
+        <dd><span class="member-ico v2"></span>公举</dd>
+      </dl>
+      <dl>
+        <dt>5000</dt>
+        <dd><span class="member-ico v3"></span>女神</dd>
+      </dl>
+      <dl>
+        <dt>10000</dt>
+        <dd><span class="member-ico v4"></span>女王</dd>
+      </dl>
+      <div class="progress-box" id="progress_content" data-progress="8000">
+        <i class="progress-box-1"></i>
+        <!-- 200 -->
+        <i class="progress-box-2"></i>
+        <!-- 1000 -->
+        <i class="progress-box-3"></i>
+        <!-- 5000 -->
+        <i class="progress-box-4"></i>
+        <!-- 10000 -->
+                                <i class="progress-box-5"></i>
+                                <!-- 10000+ -->
+      </div>
+    </div>
+    <div class="mature-progress-box bgtwos">
+      <dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl> <dl> <dt></dt> </dl>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+;(function(){
+  var mamture_progress = $('#mamture_progress');
+  var progress_content = $('#progress_content');
+  var l = 0;
+  var _number = progress_content.attr('data-progress');
+  var timer = null;
+  var pro = 0;
+
+  if ( _number < 200 ) {
+    lad(_number, 200, '.progress-box-1',function(){
+      $('.progress-box-1').append('<span>再消费'+(200-_number)+'元即可升级</span>');
+    });
+  };
+
+  if ( _number >= 200 && _number < 1000  ) {
+    lad(200, 200, '.progress-box-1', function(){
+      mamture_progress.addClass('v1');
+      lad(_number-200, 1000-200, '.progress-box-2',function(){
+        $('.progress-box-2').addClass('active');
+        $('.progress-box-2').append('<span>再消费'+(1000-_number)+'元即可升级</span>');
+      });
+    });
+  };
+
+  if ( _number >= 1000 && _number < 5000  ) {
+    lad(200, 200, '.progress-box-1', function(){
+      mamture_progress.addClass('v1')
+      lad(1000, 1000, '.progress-box-2',function(){
+        mamture_progress.addClass('v2');
+        lad(_number-1000, 5000-1000, '.progress-box-3',function(){
+          $('.progress-box-3').addClass('active');
+          $('.progress-box-3').append('<span>再消费'+(5000-_number)+'元即可升级</span>');
+        })
+      });
+    });
+  };
+
+  if ( _number >= 5000 && _number < 10000  ) {
+    lad(200, 200, '.progress-box-1', function(){
+      mamture_progress.addClass('v1')
+      lad(1000, 1000, '.progress-box-2',function(){
+        mamture_progress.addClass('v2')
+        lad(5000, 5000, '.progress-box-3', function(){
+          mamture_progress.addClass('v3')
+          lad(_number-5000, 10000-5000, '.progress-box-4',function(){
+            $('.progress-box-4').addClass('active');
+            $('.progress-box-4').append('<span>再消费'+(10000-_number)+'元即可升级</span>');
+          })
+        })
+      });
+    });
+  };
+
+  if ( _number >= 10000) {
+    lad(200, 200, '.progress-box-1', function(){
+      mamture_progress.addClass('v1')
+      lad(1000, 1000, '.progress-box-2',function(){
+        mamture_progress.addClass('v2')
+        lad(5000, 5000, '.progress-box-3', function(){
+          mamture_progress.addClass('v3')
+          lad(10000, 10000, '.progress-box-4',function(){
+            mamture_progress.addClass('v4')
+            lad(_number-10000,10000000,'.progress-box-5')
+          })
+        })
+      });
+    });
+  };
+
+  /*
+   @number : 成长值
+   @max : 最大值
+   @callback : 回调方法
+   */
+  function lad(number, max, cls, callback){
+    l = 0;
+    timer = setInterval(function(){
+      if ( number <= 200 ) {
+        l++;
+      }else if( number > 200 && number <= 1000 ){
+        l+=5;
+      }else if( number > 1000 && number <= 5000 ){
+        l+=10;
+      }else if( number > 5000 && number <= 10000 ){
+        l+=20;
+      }else{
+        l+=30;
+      };
+
+      pro = (l/max)*100;        //100为  div的长度
+      if ( l >= number ) {
+        clearInterval(timer);
+        if ( callback ) callback();   //回调
+      };
+      $(cls).css({
+        width : pro+'px'
+      })
+    },1)
+  }
+})();
+  
+
+</script>
+
+
+  
+</body>
+</html>
